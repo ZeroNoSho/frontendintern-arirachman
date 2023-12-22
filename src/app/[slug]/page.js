@@ -52,7 +52,7 @@ export default function Home() {
         <div className="flex flex-wrap ">
           <Card></Card>
         </div>
-        <Pafination sep={"bg-[#ff6800] text-white"}></Pafination>
+        <Pafination></Pafination>
       </div>
     </main>
   );
