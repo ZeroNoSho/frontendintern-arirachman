@@ -1,9 +1,37 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 export default function Nav() {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const isScrollingUp = currentScrollPos < prevScrollPos;
+
+      setPrevScrollPos(currentScrollPos);
+
+      // You can adjust the threshold based on when you want the header to hide/show
+      setVisible(
+        (isScrollingUp && currentScrollPos > 50) || currentScrollPos <= 50
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   return (
-    <div className="w-full text-gray-700 bg-[#ff6800] fixed top-0 z-20">
+    <div
+      className={`w-full text-gray-700 bg-[#ff6800] fixed top-0 z-20 ${
+        visible ? "fade-in" : "fade-out"
+      } duration-700`}
+    >
       <div className="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between p-4">
           <Link
