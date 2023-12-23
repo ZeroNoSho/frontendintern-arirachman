@@ -1,9 +1,13 @@
 "use client";
+import dynamic from "next/dynamic";
 import { Contex } from "@/context/store";
-import { useContext, useEffect, useState } from "react";
-import Card from "@/components/card";
-import Pafination from "@/components/pagination";
-import Dropdown from "@/components/dropdown";
+import { useContext } from "react";
+
+const Pafination = dynamic(() =>
+  import("../../components/pagination/index.js")
+);
+const Dropdown = dynamic(() => import("../../components/dropdown/index.js"));
+const Card = dynamic(() => import("../../components/card/index.js"));
 export default function Home() {
   const { size, sort, data } = useContext(Contex);
 

@@ -50,7 +50,7 @@ export default function Pafination({ sep }) {
               .slice(1)
               .slice(0, data.meta.links.length - 2)
               .map((e, i) => (
-                <li>
+                <li key={i}>
                   <button
                     disabled={e.url == null ? true : false}
                     className={`${
