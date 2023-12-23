@@ -25,7 +25,7 @@ export default function Pafination({ sep }) {
   return (
     <nav className="mt-10 ">
       <div className="w-fit mx-auto">
-        <ul className="flex mx-auto">
+        <ul className="flex flex-wrap  mx-auto">
           <li>
             <a
               className="mx-1 flex h-9 w-9 items-center justify-center rounded-lg border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
