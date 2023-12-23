@@ -15,6 +15,7 @@ export default function Card() {
                 <Image
                   width={1000}
                   height={1000}
+                  alt={"foto"}
                   src={
                     str.medium_image[0] == undefined
                       ? "a"
