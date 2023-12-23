@@ -23,9 +23,9 @@ export default function Home() {
           </h5>
         </div>
       </div>
-      <div className="px-24 pb-14">
-        <div className="flex my-8 ml-3 ">
-          <p className="text-left w-full m-auto text-gray-600">
+      <div className="px-24 pb-14 max-[600px]:px-1">
+        <div className="flex my-8 ml-3 max-[600px]:block">
+          <p className="text-left w-full m-auto text-gray-600 max-[600px]:mb-10 max-[600px]:mx-5">
             Showing 1 - {size} of {data && data.meta.total}
           </p>
           <div className="flex flex justify-end w-full">

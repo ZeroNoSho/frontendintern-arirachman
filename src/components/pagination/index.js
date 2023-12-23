@@ -31,6 +31,10 @@ export default function Pafination({ sep }) {
               className="mx-1 flex h-9 w-9 items-center justify-center rounded-lg border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
               href="#"
               aria-label="Previous"
+              onClick={() => {
+                setNumber(1);
+                router.push(`/1`);
+              }}
             >
               <span className="material-icons text-sm">{`<<`}</span>
             </a>
@@ -79,6 +83,10 @@ export default function Pafination({ sep }) {
               className="mx-1 flex h-9 w-9 items-center justify-center rounded-lg border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
               href="#"
               aria-label="Next"
+              onClick={() => {
+                setNumber(data.meta.last_page);
+                router.push(`/${data.meta.last_page}`);
+              }}
             >
               <span className="material-icons text-sm">{`>>`}</span>
             </a>
